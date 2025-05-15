@@ -1,0 +1,159 @@
+@font-face {
+	font-family: 'English-1';
+	src: url('/fonts/NotoSerifDisplay-VariableFont_wdth,wght.ttf') format("truetype");
+}
+@font-face {
+	font-family: 'Korean-1';
+	src: url('/fonts/NotoSerifKR-Light.ttf') format("truetype");
+}
+@font-face {
+	font-family: 'English-2';
+	src: url('/fonts/JustAnotherHand-Regular.ttf') format("truetype");
+}
+@font-face {
+	font-family: 'Russian-1';
+	src: url('/fonts/NotoSerifDisplay-VariableFont_wdth,wght.ttf') format("truetype");
+}
+@font-face {
+	font-family: 'Japanese-1';
+	src: url('/fonts/Icing soda2.ttf') format("truetype");
+}
+@font-face {
+	font-family: 'NerdFont';
+	src: url('/fonts/3270NerdFontPropo-SemiCondensed.ttf') format("truetype");
+}
+
+body {
+	margin: 0;
+	font-family: 'Standard', sans-serif;
+	background-color: #121723;
+	color: white;
+	overflow-x: hidden;
+}
+
+header {
+	position: relative;
+	height: 100vh;
+	overflow: hidden;
+	transition: height 0.5s ease; /* Adjusted for smoother animation */
+}
+
+header.shrink {
+	height: 25vh; /* Slightly larger shrink effect */
+}
+
+canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: block;
+	pointer-events: none; /* Ensure fireworks remain unaffected by interactions */
+}
+
+.header-content {
+	position: relative;
+	z-index: 1;
+	text-align: center;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+h1 {
+	font-size: 4em;
+	font-weight: bold;
+	margin: 0;
+	opacity: 0; /* Start with hidden text */
+	transition: opacity 1s ease, font-family 0.5s ease; /* Fade transition */
+}
+
+.language-selector {
+	position: fixed; /* Fixed to the bottom-right of the screen */
+	bottom: 20px;
+	right: 20px;
+	border: 2px solid white;
+	padding: 5px 10px;
+	cursor: pointer;
+	background: transparent;
+	color: white;
+	z-index: 2;
+}
+
+.language-options {
+	display: none; /* Initially hidden */
+	position: absolute;
+	bottom: 40px; /* Expand upwards */
+	right: 0;
+	background: transparent;
+	border: 1px solid white;
+	padding: 5px;
+	list-style: none;
+	margin: 0;
+	z-index: 2;
+}
+
+.language-options.active {
+	display: block; /* Show options when active */
+}
+
+.language-options li {
+	padding: 5px 10px;
+	cursor: pointer;
+	color: white;
+}
+
+.language-options li:hover {
+	background: rgba(255, 255, 255, 0.2);
+}
+
+#messages {
+	display: flex;
+	justify-content: space-around;
+	padding: 0px;
+}
+
+.message-box {
+	font-family: 'English-1';
+	background: rgba(255, 255, 255, 0.1);
+	border: 0.5px solid white;
+	padding: 20px;
+	width: 100%;
+	margin: 15px;
+	box-sizing: border-box;
+	color: white;
+}
+
+textarea {
+	display: none; /* Remove input functionality */
+}
+
+textarea:focus {
+	outline: none;
+}
+
+.social {
+	display: block;
+	font-family: 'NerdFont';
+	font-size: 30px;
+	text-align: right;
+	margin-top: 10px;
+}
+
+.name {
+	display: block;
+	text-align: right;
+	margin-top: 10px;
+	font-style: italic;
+}
+
+footer {
+	text-align: center;
+	padding: 20px;
+	background: #121723;
+	color: white;
+}
+
+h3 {
+	color: black;
+}
